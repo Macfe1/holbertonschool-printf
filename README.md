@@ -1,4 +1,3 @@
-![Project badge](https://intranet.hbtn.io/assets/pathway/004_color-d2fbcfb42ba7481834896ecc89a6f0ae65762b3c1096691dd0f820f7f29e3389.png) 
 # C - printf
 ## Details
 Master By: Julien Barbier, co-founder & CEO Weight: 5 Migrated to checker v2:  Project to be done in teams of 2 peopleYour score will be updated once you launch the project review.Manual QA review must be done(request it when you are done with the project)### Concepts
@@ -13,10 +12,6 @@ For this project, we expect you to look at these concepts:
 
 ## Background Context
 Write your own   ` printf `   function.
- ![](https://s3.eu-west-3.amazonaws.com/hbtn.intranet.project.files/holbertonschool-low_level_programming/228/printf.png) 
-
-^ In this picture, [Kris](https://intranet.hbtn.io/rltoken/Z4sDWPtODdbPhuhOR3yeLA) 
-, and [Jul](https://intranet.hbtn.io/rltoken/QUvlq7E1jttx-t1TCckfHQ) 
 
 ## Resources
 Read or watch :

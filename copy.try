@@ -1,38 +1,44 @@
 #include "main.h"
+#include <unistd.h>
 
 /**
- * aux_funct - manage the strings, the buffer and the parameters
+ * _printf - function to print
  *
- * @format: the info to pass to the buffer
- * @param_to_exe: parameters to manage
- * @buffer: space where we paste all the string
+ * @format: What we have to print
  *
- * Return: the size of the parameters passed to the buffer
+ * Return: the number of characteres
  */
-int aux_funct(const char *format, va_list param_to_exe, char *buffer)
+int _printf(const char *format, ...)
 {
 	int counter = 0, counter_arg = 0, validOperation = 0, size = 0;
+	char buffer[1024];
+
 	convert_arg funct_struct[] = {
 
 		{'c', pr_char},
 		{'s', pr_string},
 		{'\0', NULL}
 	};
+
+	va_list param_to_exe;
+
+	va_start(param_to_exe, format);
+
 	for (counter = 0; format[counter] != '\0' && format != NULL; counter++)
 	{
 		counter_arg = 0;
+
 		if (format[counter] != '%')
 		{
-			buffer[size] = format[counter];
-			size++;
+			buffer[size] += format[counter];
 			continue;
 		}
-		validOperation = 0;
 		while (funct_struct[counter_arg].type != '\0')
 		{
 			if (format[counter + 1] == '\0')
 			{
 				validOperation = 0;
+				counter_arg++;
 				break;
 			}
 			if (format[counter + 1] == funct_struct[counter_arg].type)
@@ -42,13 +48,11 @@ int aux_funct(const char *format, va_list param_to_exe, char *buffer)
 				validOperation = 1;
 				break;
 			}
-			counter_arg++;
 		}
 		if (!validOperation)
-		{
 			buffer[size] = format[counter];
-			size++;
-		}
 	}
+	va_end(param_to_exe);
+	write(1, buffer, size);
 	return (size);
 }

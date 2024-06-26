@@ -4,16 +4,16 @@
 /**
  * pr_string - function to pass a string to the buffer
  *
- * @param_to_exe: list of parameters
+ * @lis_arg: list of parameters
  * @start_point: point in the buffer to know where to continue
  * @buffer: where we paste the new parameter
  *
  * Return: the number of characters passed to the buffer
  */
-int pr_string(va_list param_to_exe, int start_point, char *buffer)
+int pr_string(va_list lis_arg, int start_point, char *buffer)
 {
 	int counter_i = 0;
-	char *argument_string = va_arg(param_to_exe, char*);
+	char *argument_string = va_arg(lis_arg, char*);
 
 	if (argument_string == NULL)
 		argument_string = "(null)";

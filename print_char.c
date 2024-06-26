@@ -4,15 +4,15 @@
 /**
  * pr_char - function to pass a parameter to the buffer
  *
- * @param_to_exe: list of parameters
+ * @lis_arg: list of parameters
  * @start_point: point in the buffer to know where to continue
  * @buffer: where we paste the new parameter
  *
  * Return: the number of parameters passed to the buffer
  */
-int pr_char(va_list param_to_exe, int start_point, char *buffer)
+int pr_char(va_list lis_arg, int start_point, char *buffer)
 {
-	char argument_char = (char) va_arg(param_to_exe, int);
+	char argument_char = (char) va_arg(lis_arg, int);
 
 	buffer[start_point] = argument_char;
 

@@ -14,16 +14,22 @@ int _printf(const char *format, ...)
 	int size = 0;
 	char buffer[6024];
 
-	va_list param_to_exe;
+	fun_o v_op[] = {
+		{'c', pr_char},
+		{'s', pr_string},
+		{'\0', NULL}
+	};
+
+	va_list lis_arg;
 
 	if (format == NULL)
 		return (-1);
 
-	va_start(param_to_exe, format);
+	va_start(lis_arg, format);
 
-	size = aux_funct(format, param_to_exe, buffer);
+	size = aux_funct(format, lis_arg, buffer, v_op);
 
-	va_end(param_to_exe);
+	va_end(lis_arg);
 
 	write(1, buffer, size);
 	return (size);

@@ -12,7 +12,7 @@
 int _printf(const char *format, ...)
 {
 	int size = 0;
-	char buffer[6024];
+	char buffer[116024];
 
 	fun_o v_op[] = {
 		{'c', pr_char},

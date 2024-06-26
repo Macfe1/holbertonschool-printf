@@ -29,12 +29,14 @@ int aux_funct(const char *format, va_list lis_arg, char *buffer, fun_o v_op[])
 			counter++;
 			continue;
 		}
+		if (format[counter + 1] == '\0')
+		{
+			buffer[size++] = '%';
+			break;
+		}
 		validOperation = 0;
 		for (coun_ope = 0; v_op[coun_ope].type != '\0'; coun_ope++)
 		{
-			if (format[counter + 1] == '\0')
-				break;
-
 			if (format[counter + 1] && format[counter + 1] == v_op[coun_ope].type)
 			{
 				size += v_op[coun_ope].p_function(lis_arg, size, buffer);

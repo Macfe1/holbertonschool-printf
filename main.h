@@ -12,7 +12,7 @@ int _printf(const char *format, ...);
 typedef struct convert_arg
 {
 	char type;
-	int(*p_function)(va_list param_to_exe, int start_point, char *buffer);
+	int (*p_function)(va_list param_to_exe, int start_point, char *buffer);
 } convert_arg;
 
 /*Prototypes*/

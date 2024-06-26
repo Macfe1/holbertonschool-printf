@@ -1,0 +1,55 @@
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * aux_funct - jsjvijifvjfv
+ *
+ * @format: dfdfdsf
+ * @param_to_exe: dfsfsd
+ * @buffer: dfds
+ *
+ * Return: the size of the parameters passed to the buffer
+ */
+int aux_funct(const char *format, va_list param_to_exe, char *buffer)
+{
+	int counter = 0, counter_arg = 0, validOperation = 0, size = 0;
+	convert_arg funct_struct[] = {
+
+		{'c', pr_char},
+		{'s', pr_string},
+		{'\0', NULL}
+	};
+	for (counter = 0; format[counter] != '\0' && format != NULL; counter++)
+	{
+		counter_arg = 0;
+		if (format[counter] != '%')
+		{
+			buffer[size] = format[counter];
+			size++;
+			continue;
+		}
+		validOperation = 0;
+		while (funct_struct[counter_arg].type != '\0')
+		{
+			if (format[counter + 1] == '\0')
+			{
+				validOperation = 0;
+				break;
+			}
+			if (format[counter + 1] == funct_struct[counter_arg].type)
+			{
+				size += funct_struct[counter_arg].p_function(param_to_exe, size, buffer);
+				counter++;
+				validOperation = 1;
+				break;
+			}
+			counter_arg++;
+		}
+		if (!validOperation)
+		{
+			buffer[size] = format[counter];
+			size++;
+		}
+	}
+	return (size);
+}

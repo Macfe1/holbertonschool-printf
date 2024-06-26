@@ -11,7 +11,7 @@
 int _printf(const char *format, ...)
 {
 	int size = 0;
-	char buffer[2024];
+	char buffer[6024];
 
 	va_list param_to_exe;
 

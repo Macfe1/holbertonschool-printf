@@ -13,12 +13,10 @@ int aux_funct(const char *format, va_list param_to_exe, char *buffer)
 {
 	int counter = 0, con_arg = 0, validOperation = 0, size = 0;
 	convert_arg funct_struct[] = {
-
 		{'c', pr_char},
 		{'s', pr_string},
 		{'\0', NULL}
 	};
-
 	if (format == NULL)
 		return (-1);
 	for (counter = 0; format[counter] != '\0'; counter++)

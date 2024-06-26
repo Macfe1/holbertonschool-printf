@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 /*Prototypes*/
+
 int _printf(const char *format, ...);
 int pr_char(va_list param_to_exe, int start_point, char *buffer);
 int pr_string(va_list param_to_exe, int start_point, char *buffer);

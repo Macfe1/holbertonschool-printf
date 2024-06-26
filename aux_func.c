@@ -31,7 +31,7 @@ int aux_funct(const char *format, va_list lis_arg, char *buffer, fun_o v_op[])
 		}
 		if (format[counter + 1] == '\0')
 		{
-			buffer[size] = '%';
+			buffer[size++] = '%';
 			break;
 		}
 		validOperation = 0;

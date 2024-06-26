@@ -1,5 +1,6 @@
 #include "main.h"
 #include <unistd.h>
+#include <stdio.h>
 
 /**
  * _printf - function to print
@@ -23,6 +24,7 @@ int _printf(const char *format, ...)
 	size = aux_funct(format, param_to_exe, buffer);
 
 	va_end(param_to_exe);
+
 	write(1, buffer, size);
 	return (size);
 }

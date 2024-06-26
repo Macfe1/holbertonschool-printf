@@ -20,9 +20,7 @@ int pr_string(va_list param_to_exe, int start_point, char *buffer)
 
 	while (argument_string[counter_i] != '\0')
 	{
-		buffer[start_point] = argument_string[counter_i];
-		start_point++;
-		counter_i++;
+		buffer[start_point++] = argument_string[counter_i++];
 	}
 
 	return (counter_i);

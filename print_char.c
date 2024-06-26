@@ -12,9 +12,8 @@
  */
 int pr_char(va_list param_to_exe, int start_point, char *buffer)
 {
-	char argument_char = '\0';
+	char argument_char = (char) va_arg(param_to_exe, int);
 
-	argument_char = (char) va_arg(param_to_exe, int);
 	buffer[start_point] = argument_char;
 
 	return (1);

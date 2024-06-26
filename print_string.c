@@ -13,9 +13,10 @@
 int pr_string(va_list param_to_exe, int start_point, char *buffer)
 {
 	int counter_i = 0;
-	char *argument_string = NULL;
+	char *argument_string = va_arg(param_to_exe, char*);
 
-	argument_string = va_arg(param_to_exe, char*);
+	if (argument_string == NULL)
+		return (0);
 
 	while (argument_string[counter_i] != '\0')
 	{

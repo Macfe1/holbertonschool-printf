@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
- * aux_funct - jsjvijifvjfv
+ * aux_funct - manage the strings, the buffer and the parameters
  *
- * @format: dfdfdsf
- * @param_to_exe: dfsfsd
- * @buffer: dfds
+ * @format: the info to pass to the buffer
+ * @param_to_exe: parameters to manage
+ * @buffer: space where we paste all the string
  *
  * Return: the size of the parameters passed to the buffer
  */

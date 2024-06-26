@@ -9,6 +9,14 @@ int _printf(const char *format, ...);
 
 /*Structures*/
 
+/**
+ * struct convert_arg - to call a function
+ *
+ * @type: character to compare
+ * @p_function: pointer to a function
+ *
+ * Description: to compare a character and pass the right function
+ */
 typedef struct convert_arg
 {
 	char type;

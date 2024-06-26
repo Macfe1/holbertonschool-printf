@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 
 	va_start(param_to_exe, format);
 
-	size += aux_funct(format, param_to_exe, buffer);
+	size = aux_funct(format, param_to_exe, buffer);
 
 	va_end(param_to_exe);
 	write(1, buffer, size);

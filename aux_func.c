@@ -18,16 +18,22 @@ int aux_funct(const char *format, va_list param_to_exe, char *buffer)
 		{'s', pr_string},
 		{'\0', NULL}
 	};
-	for (counter = 0; format[counter] != '\0' && format != NULL; counter++)
+	
+	if (format == NULL)
+		return (-1);
+
+	for (counter = 0; format[counter] != '\0'; counter++)
 	{
-		counter_arg = 0;
 		if (format[counter] != '%')
 		{
 			buffer[size] = format[counter];
 			size++;
 			continue;
 		}
+		
+		counter_arg = 0;
 		validOperation = 0;
+
 		while (funct_struct[counter_arg].type != '\0')
 		{
 			if (format[counter + 1] == '\0')
@@ -42,6 +48,7 @@ int aux_funct(const char *format, va_list param_to_exe, char *buffer)
 				validOperation = 1;
 				break;
 			}
+			validOperation = 0;
 			counter_arg++;
 		}
 		if (!validOperation)

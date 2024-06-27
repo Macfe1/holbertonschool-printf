@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 	fun_o v_op[] = {
 		{'c', pr_char},
 		{'s', pr_string},
+		{'%', pr_modulo},
 		{'\0', NULL}
 	};
 

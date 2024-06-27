@@ -23,17 +23,7 @@ int aux_funct(const char *format, va_list lis_arg, char *buffer, fun_o v_op[])
 			buffer[size++] = format[counter];
 			continue;
 		}
-		if (format[counter + 1] == '%')
-		{
-			buffer[size++] = '%';
-			counter++;
-			continue;
-		}
-		if (format[counter + 1] == '\0')
-		{
-			buffer[size++] = '%';
-			break;
-		}
+
 		validOperation = 0;
 		for (coun_ope = 0; v_op[coun_ope].type != '\0'; coun_ope++)
 		{

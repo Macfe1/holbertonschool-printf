@@ -10,18 +10,7 @@
 int main(void)
 {
 	int len = 0;
-	int len2 = 0, number_char = 0, numbers = 9876;
-	char testing[] = "hola mundo %%";
-	char modulo = '%';
-
-	_printf("%c", modulo);
-
-	number_char = _printf("Hello, world!\n");
-	printf("%d\n", number_char);
-	_printf("%d\n", number_char);
-
-	_printf("%s numbers:%d, h\n", testing, numbers);
-	printf("%s numberss: %d, h\n", testing, numbers);
+	int len2 = 0;
 
 	len = _printf("Let's try to printf a simple sentence.\n");
 	len2 = printf("Let's try to printf a simple sentence.\n");

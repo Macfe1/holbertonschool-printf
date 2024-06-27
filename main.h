@@ -3,6 +3,7 @@
 
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdio.h>
 
 
 /*Structures*/
@@ -26,6 +27,11 @@ typedef struct fun_o
 int _printf(const char *format, ...);
 int pr_char(va_list lis_arg, int start_point, char *buffer);
 int pr_string(va_list lis_arg, int start_point, char *buffer);
+int pr_modulo(
+	__attribute__((unused))va_list lis_arg,
+	int start_point,
+	char *buffer
+);
 int aux_funct(const char *format, va_list lis_arg, char *buffer, fun_o v_op[]);
 
 #endif

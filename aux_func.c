@@ -16,6 +16,7 @@ int aux_funct(const char *format, va_list lis_arg, char *buffer, fun_o v_op[])
 
 	if (format == NULL)
 		return (-1);
+
 	for (counter = 0; format[counter] != '\0'; counter++)
 	{
 		if (format[counter] != '%')
@@ -25,7 +26,10 @@ int aux_funct(const char *format, va_list lis_arg, char *buffer, fun_o v_op[])
 		}
 
 		if (format[counter + 1] == '\0')
-			return (0);
+		{
+			buffer[size++] = '%';
+			return (-1);
+		}
 
 		validOperation = 0;
 		for (coun_ope = 0; v_op[coun_ope].type != '\0'; coun_ope++)

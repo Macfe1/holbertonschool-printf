@@ -32,6 +32,7 @@ int pr_modulo(
 	int start_point,
 	char *buffer
 );
+int pr_int(va_list lis_arg, int start_point, char *buffer);
 int aux_funct(const char *format, va_list lis_arg, char *buffer, fun_o v_op[]);
 
 #endif

@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#define INT_MIN -2147483648
+
 #include <stdarg.h>
 #include <unistd.h>
 #include <stdio.h>

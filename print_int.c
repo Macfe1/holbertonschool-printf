@@ -11,9 +11,20 @@
  */
 int pr_int(va_list lis_arg, int start_point, char *buffer)
 {
-	int negative = 0, iterator = 0, iter_2 = 0;
+	int negative = 0, iterator = 0, iter_2 = 0, iter_3 = 0;
 	char buffer_2[1024];
 	int argument_int = va_arg(lis_arg, int);
+	char int_min_str[] = "-2147483648";
+
+	if (argument_int == INT_MIN)
+	{
+		for (iter_3 = 0; int_min_str[iter_3] != '\0'; iter_3++)
+		{
+			buffer[start_point] = int_min_str[iter_3];
+		}
+
+		return (iter_3);
+	}
 
 	if (argument_int == 0)
 	{

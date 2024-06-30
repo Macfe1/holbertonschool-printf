@@ -1,0 +1,41 @@
+.TH man_3_printf 3 "2024-06-29" "1.0" "_printf manual"
+
+.SH NAME
+
+_printf - receives format and arguments to print formatted data
+
+.SH SYNOPSIS
+.sp
+.B #include "main.h"
+.sp
+.B int _printf(const char *format, ...);
+
+.SH DESCRIPTION
+
+.sp 2
+The 
+.B _printf
+function prints in the output each
+.I *format
+character and if is needed process each argument of the variadic functions that could be %c for char, %s for string, %d or %i for an int.
+.sp
+The '\\n' is a line break
+.sp
+.SH EXAMPLES
+.sp
+To print "Hello world!":
+.sp
+.nf
+_printf("Hello, world!");
+.fi
+.sp
+
+To print "My age is: 22":
+.sp
+.nf
+int age = 22;
+_printf("My age is: %d\n", age);
+.fi
+.SH REFERENCES
+.sp
+It works similarly as printf function
